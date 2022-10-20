@@ -12,7 +12,7 @@ html(lang='en')
         meta(name='description' content='')
         meta(name='author' content='')
 
-        title Paddle - Start Bootstrap Theme
+        title #{AppName} - #{LaunchAreas} - #{LaunchDate}
 
         link(rel='icon' type='image/x-icon' href='assets/favicon.ico')
 
@@ -202,7 +202,7 @@ html(lang='en')
             .container.px-5
                 .row.gx-5.justify-content-center
                     .col-xl-8
-                        .h2.fs-1.text-white.mb-4 Launching in France starting with #{LaunchAreas} #{LaunchDate}
+                        .h2.fs-1.text-white.mb-4 Starting in #{LaunchAreas} #{LaunchDate}
                         //- img(src='assets/img/tnw-logo.svg' alt='...' style='height: 3rem;')
 
         // Footer
@@ -210,11 +210,12 @@ html(lang='en')
             .container.px-5
                 .text-white-50.small
                     .mb-2 &copy; #{AppName} 2022. All Rights Reserved.
-                    a(href='#!') Privacy
-                    span.mx-1 &middot;
-                    a(href='#!') Terms
-                    span.mx-1 &middot;
-                    a(href='#!') FAQ
+                    .mb-2 As we near launch date some of the information on this page may change.
+                    //- a(href='#!') Privacy
+                    //- span.mx-1 &middot;
+                    //- a(href='#!') Terms
+                    //- span.mx-1 &middot;
+                    //- a(href='#!') FAQ
 
         include includes/feedback-modal.pug
 
