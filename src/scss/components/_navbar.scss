@@ -8,7 +8,7 @@
     background-color: $white;
     // Fade in the mockup from bottom of screen on load
     animation: $animation-speed-slow $ease both uiRevealTop;
-    animation-delay: 1500ms;
+    animation-delay: 1200ms;
 
     .navbar-brand {
         font-family: $alt-font-family;
@@ -27,7 +27,7 @@
 
     button {
         animation: $animation-speed-slow $ease both uiRevealTop;
-        animation-delay: 1800ms;
+        animation-delay: 1500ms;
     }
 
     .navbar-nav {

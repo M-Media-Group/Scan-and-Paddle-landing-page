@@ -77,4 +77,13 @@ fieldset:invalid {
 
 img.img-shadow {
     box-shadow: 8px 8px $light-blue;
+    transition: all $animation-speed $ease;
+    &:hover {
+        box-shadow: 16px 16px $light-blue;
+    }
+}
+
+.modal.show {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
 }
