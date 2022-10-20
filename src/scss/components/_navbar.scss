@@ -25,6 +25,11 @@
         color: $gray-900;
     }
 
+    button {
+        animation: $animation-speed-slow $ease both uiRevealTop;
+        animation-delay: 1800ms;
+    }
+
     .navbar-nav {
         .nav-item {
             .nav-link {

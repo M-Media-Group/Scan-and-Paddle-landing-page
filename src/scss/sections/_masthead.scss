@@ -63,7 +63,7 @@
         .device-wrapper {
             max-width: 10rem;
             // Fade in the mockup from bottom of screen on load
-            animation: $animation-speed $ease both fade-in;
+            animation: $animation-speed-slow $ease both uiReveal;
         }
     }
 
