@@ -1,0 +1,38 @@
+// Feedback Modal
+form(netlify).joinWaitlistForm.w-100
+
+
+    // Email address input
+    .form-floating.mb-3
+        input#email.form-control(
+            type='email',
+            placeholder='name@example.com'
+            required=''
+        )
+        label(for='email') Email address
+        .invalid-feedback(data-sb-feedback='email:required')
+            | An email is required.
+        .invalid-feedback(data-sb-feedback='email:email')
+            | Email is not valid.
+
+    // Submit success message
+    //
+    // This is what your users will see when the form
+    // has successfully submitted
+    .submitSuccessMessage.d-none
+        .text-center.mb-3
+            .fw-bolder Form submission successful!
+            | To activate this form, sign up at
+            br
+            a(href='https://startbootstrap.com/solution/contact-forms') https://startbootstrap.com/solution/contact-forms
+
+    // Submit error message
+    //
+    // This is what your users will see when there is
+    // an error submitting the form
+    .submitErrorMessage.d-none
+        .text-center.text-danger.mb-3 Error sending message!
+
+    // Submit Button
+    .d-grid
+        button#submitButton.btn.btn-primary.rounded-pill.btn-lg(type='submit') Get notified when we launch

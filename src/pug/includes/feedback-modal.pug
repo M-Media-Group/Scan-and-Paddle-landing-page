@@ -1,0 +1,20 @@
+// Feedback Modal
+
+#feedbackModal.modal.fade(tabindex='-1' aria-labelledby='feedbackModalLabel' aria-hidden='true')
+    .modal-dialog.modal-dialog-centered
+        .modal-content
+            .modal-header.bg-gradient-primary-to-secondary.p-4
+                h5#feedbackModalLabel.modal-title.font-alt.text-white Join the waitlist
+                button.btn-close.btn-close-white(type='button' data-bs-dismiss='modal' aria-label='Close')
+            .modal-body.border-0.p-4
+
+                // * * * * * * * * * * * * * * *
+                // * * SB Forms Contact Form * *
+                // * * * * * * * * * * * * * * *
+
+                // This form is pre-integrated with SB Forms.
+                // To make this form functional, sign up at
+                // https://startbootstrap.com/solution/contact-forms
+                // to get an API token!
+
+                include join-waitlist-form.pug

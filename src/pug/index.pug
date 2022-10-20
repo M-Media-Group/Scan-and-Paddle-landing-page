@@ -1,0 +1,232 @@
+- var AppName = "Scan & Paddle";
+- var LaunchAreas = "Monaco, Villefranche sur Mer, and Nice"
+- var LaunchDate = "in 2023"
+
+doctype html
+html(lang='en')
+
+    head
+
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        meta(name='description' content='')
+        meta(name='author' content='')
+
+        title Paddle - Start Bootstrap Theme
+
+        link(rel='icon' type='image/x-icon' href='assets/favicon.ico')
+
+        // Bootstrap icons
+        link(href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css' rel='stylesheet')
+
+        // Google fonts
+        link(rel='preconnect' href='https://fonts.gstatic.com')
+        link(href='https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&display=swap' rel='stylesheet')
+        link(href='https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&display=swap' rel='stylesheet')
+        link(href='https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&display=swap' rel='stylesheet')
+
+        // Core theme CSS (includes Bootstrap)
+        link(href='css/styles.css' rel='stylesheet')
+
+        // GA
+        script(async src='https://www.googletagmanager.com/gtag/js?id=G-7XR17B000Z')
+        script.
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-7XR17B000Z');
+
+
+    body#page-top
+
+        // Navigation
+        nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top.shadow-sm
+            .container.px-3.px-sm-5
+
+                a.navbar-brand.fw-bold(href='#page-top') #{AppName}
+
+                //- button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation')
+                //-     | Menu
+                //-     i.bi-list
+                //- #navbarResponsive.collapse.navbar-collapse
+                //-     ul.navbar-nav.ms-auto.me-4.my-3.my-lg-0
+                //-         li.nav-item
+                //-             a.nav-link.me-lg-3(href='#features') Features
+                //-         li.nav-item
+                //-             a.nav-link.me-lg-3(href='#download') Download
+                //-     button.btn.btn-primary.rounded-pill.px-3.mb-2.mb-lg-0(data-bs-toggle='modal' data-bs-target='#feedbackModal')
+                //-         span.d-flex.align-items-center
+                //-             i.bi-chat-text-fill.me-2
+                //-             span.small Send Feedback
+
+                button.btn.btn-primary.rounded-pill.px-3.mb-2.mb-lg-0(data-bs-toggle='modal' data-bs-target='#feedbackModal') Launching #{LaunchDate}
+
+
+        // Mashead header
+        header.masthead
+            .container.px-5
+                .row.gx-5.align-items-center
+
+                    .col-lg-6.order-lg-2
+                        // Masthead device mockup feature
+                        .masthead-device-mockup
+                            include includes/gradient-circle
+                            //- include includes/shape-1
+                            include includes/shape-2
+                            .device-wrapper
+                                .device(data-device='iPhoneX' data-orientation='portrait' data-color='black')
+                                    .screen.bg-black
+                                        // PUT CONTENTS HERE:
+                                        // * * This can be a video, image, or just about anything else.
+                                        // * * Set the max width of your media to 100% and the height to
+                                        // * * 100% like the demo example below.
+                                        video(muted='muted' autoplay='' playsinline loop='' style='max-width: 100%; height: 100%;' poster='assets/img/demo-app.jpeg')
+                                            source(src='assets/img/demo-app.mov' type='video/mp4')
+                                            source(src='assets/img/demo-app.mp4' type='video/mp4')
+                    .col-lg-6.order-lg-1
+                        // Mashead text and app badges
+                        .mb-5.mb-lg-0.text-center.text-lg-start.mt-5
+                            h1.display-2.lh-1.mb-3 Find a board,
+                                br
+                                | scan the code,
+                                br
+                                | and paddle on!
+                            p.lead.fw-normal.text-muted Use our intuitive app to manage your paddle sessions and rent boards. Return to any of our automatic SUP stations when you're done.
+                            p.lead.fw-normal.text-muted.mb-5 Sign up for early access and get a special gift from us when we launch #{LaunchDate}!
+                            .d-flex.flex-column.flex-lg-row.align-items-center
+                                include includes/join-waitlist-form.pug
+
+        // Section describing the 3 steps to rent
+        section#features.py-5.bg-light-blue
+            .container.px-5
+                .row.gx-5
+                    .col-md-4
+                        // Feature item
+                        .text-center
+                            //- Number text containing number 1
+                            span.icon-feature.text-gradient.d-block.mb-1 1
+                            h3.font-alt Scan your board
+                            p.text-muted.mb-0 Scan the QR code at the station to take your board and paddle
+                    .col-md-4
+                        // Feature item
+                        .text-center
+                            span.icon-feature.text-gradient.d-block.mb-1 2
+                            h3.font-alt Paddle all day
+                            p.text-muted.mb-0 Explore the local area or take a trip to another paddle station
+                    .col-md-4
+                        // Feature item
+                        .text-center
+                            span.icon-feature.text-gradient.d-block.mb-1 3
+                            h3.font-alt Put back when done
+                            p.text-muted.mb-0 Your session ends automatically when you place your board and paddle in any paddle station
+
+        // App features section
+        section#features
+            .container.px-5
+                .row.gx-5.align-items-center
+                    .col-lg-8.order-lg-1.mb-5.mb-lg-0
+                        .container-fluid.px-5
+                            .row.gx-5
+                                .col-md-6.mb-5
+                                    // Feature item
+                                    .text-center
+                                        i.bi-phone.icon-feature.text-gradient.d-block.mb-3
+                                        h3.font-alt Scan and go
+                                        p.text-muted.mb-0 Scan a QR code and take your paddle into the water
+                                .col-md-6.mb-5
+                                    // Feature item
+                                    .text-center
+                                        i.bi-people.icon-feature.text-gradient.d-block.mb-3
+                                        h3.font-alt Add friends
+                                        p.text-muted.mb-0 Add multiple boards to your paddle session so all your friends can get involved in the fun
+                            .row
+                                .col-md-6.mb-5.mb-md-0
+                                    // Feature item
+                                    .text-center
+                                        i.bi-map.icon-feature.text-gradient.d-block.mb-3
+                                        h3.font-alt From A to B
+                                        p.text-muted.mb-0 Take your board around the area or make a trip to another station
+                                .col-md-6
+                                    // Feature item
+                                    .text-center
+                                        i.bi-patch-check.icon-feature.text-gradient.d-block.mb-3
+                                        h3.font-alt Easy end
+                                        p.text-muted.mb-0 Your session ends automatically when you place your board and paddle in any station - even if your phone is dead
+                    .col-lg-4.order-lg-0
+                        // Features section device mockup
+                        img.img-fluid.rounded(src="assets/img/paddle-top-down.jpg" alt="")
+
+        //- // Basic features section
+        //- section.bg-light
+        //-     .container.px-5
+        //-         .row.gx-5.align-items-center.justify-content-center.justify-content-lg-between
+        //-             .col-12.col-lg-5
+        //-                 h2.display-4.lh-1.mb-4 Paddle anytime
+        //-                 p.lead.fw-normal.text-muted.mb-5.mb-lg-0 Start and stop your Stand Up Paddle (SUP) sessions right from your phone. No need to go to a desk (or pay for tickets). See how long you've been paddling for. Drop off your board anywhere—points all around #{LaunchAreas} will be available.
+        //-             .col-sm-8.col-md-6
+        //-                 .px-5.px-sm-0
+        //-                     img.img-fluid.rounded(src='assets/img/standup-paddleboarding.jpg' alt='...')
+
+        // How to get a paddleboard section
+        section.bg-light
+            .container.px-5
+                .row.gx-5.align-items-center.justify-content-center.justify-content-lg-between
+                    .col-12.col-lg-5
+                        h2.display-4.lh-1.mb-4 Boards that don't bore
+                        p.lead.fw-normal.text-muted.mb-3 Beginners and pros alike will love our boards.
+                        ul.lead.fw-normal.text-muted.mb-5.mb-lg-0
+                            li.mb-1
+                                | Rigid and incredibly durable
+                            li.mb-1
+                                | Stable and easy to paddle
+                            li.mb-1
+                                | Supports up to two people
+                            li.mb-1
+                                | Comes with bungee cords
+                    .col-sm-8.col-md-6
+                        .px-5.px-sm-0
+                            img.img-fluid.rounded(src='assets/img/standup-paddleboarding.jpg' alt='...')
+
+        // Call to action section
+        section.cta
+            .cta-content
+                .container.px-5
+                    h2.text-white.display-2.lh-1.mb-4
+                        | #{AppName}
+                    p.lead.fw-normal.text-white.mb-5 Join our waiting list to get early access to SUP rentals.
+                    include includes/join-waitlist-form.pug
+
+        // Quote/testimonial aside
+        aside.text-center.bg-gradient-primary-to-secondary
+            .container.px-5
+                .row.gx-5.justify-content-center
+                    .col-xl-8
+                        .h2.fs-1.text-white.mb-4 Launching in France starting with #{LaunchAreas} #{LaunchDate}
+                        //- img(src='assets/img/tnw-logo.svg' alt='...' style='height: 3rem;')
+
+        // Footer
+        footer.bg-black.text-center.py-5
+            .container.px-5
+                .text-white-50.small
+                    .mb-2 &copy; #{AppName} 2022. All Rights Reserved.
+                    a(href='#!') Privacy
+                    span.mx-1 &middot;
+                    a(href='#!') Terms
+                    span.mx-1 &middot;
+                    a(href='#!') FAQ
+
+        include includes/feedback-modal.pug
+
+        // Bootstrap core JS
+        script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js')
+
+        // Core theme JS
+        script(src='js/scripts.js')
+
+        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+        // * *                               SB Forms JS                               * *
+        // * * Activate your form at https://startbootstrap.com/solution/contact-forms * *
+        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+        //- script(src='https://cdn.startbootstrap.com/sb-forms-latest.js')

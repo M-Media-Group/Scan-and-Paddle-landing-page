@@ -1,0 +1,110 @@
+// Define the global animation speed of 300ms
+
+$animation-speed: 300ms !default;
+
+$animation-speed-slow: 800ms !default;
+
+// Define a default bezier curve
+$ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1) !default;
+$ease: $ease-in-out-cubic !default;
+
+$short-delay: 200ms !default;
+$long-delay: 400ms !default;
+
+/* ==========================================================================
+    Base animations setup
+  ========================================================================== */
+// Define the animation mixin
+@mixin animation($animate) {
+    animation: $animate;
+    -webkit-animation: $animate; // on older versions of android
+    -moz-animation: $animate; // on older versions of android
+    -ms-animation: $animate; // IE on anything IE 10
+    -o-animation: $animate; // can be the same as the standard one
+
+    // Vendor-prefixed transitions when the animated object has no transitions defined
+    -webkit-transition: $ease;
+    -moz-transition: $ease;
+    -o-transition: $ease;
+    animation-delay: 300ms;
+}
+
+// Define the transition mixin
+@mixin transition($transition) {
+    // Vendor-prefixed fallbacks to support versions of IE before 10
+    // that don't support transition
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+
+    // Define the standard transitions
+    transition: $transition;
+}
+
+// Usage: @include fade-out()
+@mixin fade-out() {
+    @include animation(fade-out $animation-speed $ease 1 forwards);
+}
+
+@mixin fade-in() {
+    @include animation(fade-in $animation-speed $ease 1 forwards);
+}
+
+@mixin fade-out--slow() {
+    @include animation(fade-out $animation-speed-slow $ease 1 forwards);
+}
+
+@mixin fade-in--slow() {
+    @include animation(fade-in $animation-speed-slow $ease 1 forwards);
+}
+
+@mixin zoom-out() {
+    @include transition(zoom-out $animation-speed-slow $ease 1 forwards);
+}
+
+@mixin zoom-in() {
+    @include animation(zoom-in $animation-speed-slow $ease 1 forwards);
+}
+
+// Keyframes to reveal UI elements starting from bottom to top
+@keyframes uiReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(150%);
+    }
+    60% {
+        opacity: 1;
+        // transform: translateY(10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Keyframes to reveal from top
+@keyframes uiRevealTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-150%);
+    }
+    60% {
+        opacity: 1;
+        // transform: translateY(10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Keyframe to fade in
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
