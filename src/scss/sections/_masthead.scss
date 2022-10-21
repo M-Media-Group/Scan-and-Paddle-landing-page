@@ -25,7 +25,7 @@
             position: absolute;
             fill: url(#circleGradient);
             width: 70%;
-            display: none;
+            display: block;
 
             .gradient-start-color {
                 stop-color: $primary;
@@ -59,11 +59,17 @@
             right: 10%;
         }
 
+        .qr-code {
+            position: absolute;
+            width: 50%;
+        }
+
         // Set a max width for the device mockup on smallest screen sizes
         .device-wrapper {
             max-width: 10rem;
             // Fade in the mockup from bottom of screen on load
             animation: $animation-speed-slow $ease both uiReveal;
+            animation-delay: 500ms;
         }
     }
 
